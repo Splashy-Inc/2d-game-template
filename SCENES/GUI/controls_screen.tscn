@@ -7,13 +7,16 @@
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
 script = ExtResource("1_tvbxo")
 
 [node name="ScreenRows" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 0
-offset_right = 934.0
-offset_bottom = 713.0
-theme_override_constants/separation = 30
+offset_right = 640.0
+offset_bottom = 339.0
+theme_override_constants/separation = 15
 alignment = 1
 
 [node name="ScreenTitle" type="BoxContainer" parent="ScreenRows"]
@@ -22,7 +25,7 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="ScreenRows/ScreenTitle"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 36
 text = "How To Play"
 
 [node name="TopicItem" type="VBoxContainer" parent="ScreenRows"]
@@ -31,7 +34,7 @@ alignment = 1
 
 [node name="TopicTitle" type="Label" parent="ScreenRows/TopicItem"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 24
 text = "Goal"
 horizontal_alignment = 1
 
@@ -40,18 +43,21 @@ layout_mode = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="ScreenRows/TopicItem/TopicItem"]
+custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Defend your moonshine still (in center of each level) from the cats trying to destroy it!"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="PlayerControl" type="VBoxContainer" parent="ScreenRows"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Title" type="Label" parent="ScreenRows/PlayerControl"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 24
 text = "Player Controls"
 horizontal_alignment = 1
 
@@ -62,196 +68,196 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Controls" type="VBoxContainer" parent="ScreenRows/PlayerControl/Controls"]
+[node name="ControlsGrid" type="GridContainer" parent="ScreenRows/PlayerControl/Controls"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/v_separation = 12
 
-[node name="Movement" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="LayoutControl" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Movement"
 
-[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/Movement"]
+[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls/Movement"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl"]
 layout_mode = 2
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer/HBoxContainer"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 
-[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer/HBoxContainer"]
+[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "W"
 horizontal_alignment = 1
 
-[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer/HBoxContainer"]
+[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer/HBoxContainer2"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "A"
 horizontal_alignment = 1
 
-[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer/HBoxContainer2"]
+[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "S"
 horizontal_alignment = 1
 
-[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Movement/VBoxContainer/HBoxContainer2"]
+[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/LayoutControl/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "D"
 horizontal_alignment = 1
 
-[node name="MeleeAttack" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="Control1" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/MeleeAttack"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Melee Attack"
 
-[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/MeleeAttack"]
+[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1"]
 layout_mode = 2
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/MeleeAttack"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Left Click"
 horizontal_alignment = 1
 
-[node name="RangedMode" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="Control2" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedMode"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Ranged Mode"
 
-[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/RangedMode"]
+[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control2"]
 layout_mode = 2
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedMode"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Right Click (Hold)"
 horizontal_alignment = 1
 
-[node name="RangedAim" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="Control3" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAim"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Cycle Ranged Targets"
 
-[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAim"]
+[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control3"]
 layout_mode = 2
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAim"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Mouse left/right"
 horizontal_alignment = 1
 
-[node name="RangedAttack" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="ComboControl1" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAttack"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/ComboControl1"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Ranged Attack"
 
-[node name="Spacer2" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAttack"]
+[node name="Spacer2" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/ComboControl1"]
 layout_mode = 2
 
-[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAttack"]
+[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/ComboControl1"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Right Click"
 horizontal_alignment = 1
 
-[node name="Plus" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAttack"]
+[node name="Plus" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/ComboControl1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "+"
 horizontal_alignment = 1
 
-[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/RangedAttack"]
+[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/ComboControl1"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Left Click"
 horizontal_alignment = 1
 
-[node name="Run" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="Control4" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Run"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control4"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Run"
 
-[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/Run"]
+[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control4"]
 layout_mode = 2
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Run"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control4"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Shift (Hold)"
 horizontal_alignment = 1
 
-[node name="Block" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/Controls"]
+[node name="Control 5" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Block"]
+[node name="ControlName" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control 5"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Block"
 
-[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/Controls/Block"]
+[node name="Spacer" type="Control" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control 5"]
 layout_mode = 2
 
-[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/Controls/Block"]
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control 5"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("2_tn6xa")
 text = "Crtl (Hold)"
 horizontal_alignment = 1
@@ -262,6 +268,6 @@ size_flags_horizontal = 3
 
 [node name="KeyPressPrompt" type="Label" parent="ScreenRows"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 24
 text = "Press any key to exit"
 horizontal_alignment = 1
