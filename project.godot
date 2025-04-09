@@ -15,7 +15,6 @@ run/main_scene="res://SCENES/start_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://SplashySplashScreen.png"
 boot_splash/fullsize=false
-config/icon="res://ASSETS/Player/Splorsh.png"
 
 [autoload]
 
