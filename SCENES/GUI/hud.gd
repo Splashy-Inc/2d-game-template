@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+class_name HUD
+
 signal play_pressed
 signal restart_pressed
 signal quit_pressed
