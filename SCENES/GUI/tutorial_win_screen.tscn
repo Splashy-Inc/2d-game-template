@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxb7w2wx2e4x7"]
+
+[ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_v7xg8"]
+
+[sub_resource type="GDScript" id="GDScript_k2g7k"]
+script/source = "extends Control
+
+signal button_pressed
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_main_menu_button_pressed():
+	button_pressed.emit(\"Main menu\")
+
+func _on_next_level_button_pressed():
+	button_pressed.emit(\"Next Level\")
+
+func _on_enemies_button_pressed():
+	button_pressed.emit(\"100 Enemies\")
+"
+
+[node name="TutorialWinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = SubResource("GDScript_k2g7k")
+
+[node name="MenuContent" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="MenuContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Tutorial complete!"
+horizontal_alignment = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="MenuContent"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="MainMenuButton" type="Button" parent="MenuContent/MenuButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_v7xg8")
+text = "Main Menu"
+
+[node name="NextLevelButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(255, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_v7xg8")
+text = "Next Level"
+
+[node name="100EnemiesButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(334, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_v7xg8")
+text = "Fight 100 Enemies"
+
+[connection signal="pressed" from="MenuContent/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MenuContent/MenuButtons/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="MenuContent/MenuButtons/100EnemiesButton" to="." method="_on_enemies_button_pressed"]
