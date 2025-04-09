@@ -19,7 +19,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="MenuContent"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 36
 text = "You win!"
 horizontal_alignment = 1
 
@@ -29,21 +29,23 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
 [node name="MainMenuButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Main Menu"
 
 [node name="RestartButton" type="Button" parent="MenuContent/MenuButtons"]
-custom_minimum_size = Vector2(255, 0)
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Restart Level"
 
 [node name="QuitButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Quit"
 

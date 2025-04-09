@@ -4,22 +4,22 @@
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="1_kt3cy"]
 
 [node name="LossScreen" type="Control"]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
 script = ExtResource("1_ig5wj")
 
 [node name="MenuContent" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 255.0
+offset_bottom = 204.0
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Title" type="Label" parent="MenuContent"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 36
 text = "You lose..."
 horizontal_alignment = 1
 
@@ -29,21 +29,23 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
 [node name="MainMenuButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_kt3cy")
 text = "Main Menu"
 
 [node name="RestartButton" type="Button" parent="MenuContent/MenuButtons"]
-custom_minimum_size = Vector2(255, 0)
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_kt3cy")
 text = "Restart Level"
 
 [node name="QuitButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_kt3cy")
 text = "Quit"
 
