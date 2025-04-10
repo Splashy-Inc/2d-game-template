@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://temjlvcxcb3r"]
 
-[ext_resource type="Script" path="res://SCENES/GUI/loss_screen.gd" id="1_ig5wj"]
+[ext_resource type="Script" path="res://SCRIPTS/loss_screen.gd" id="1_ig5wj"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="1_kt3cy"]
 
 [node name="LossScreen" type="Control"]

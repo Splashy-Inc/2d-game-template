@@ -50,8 +50,12 @@ func _restart_level():
 	
 	var new_level = level_scene.instantiate()
 	add_child(new_level)
-	new_level.lost.connect(_on_level_lost)
-	new_level.won.connect(_on_level_won)
+	for sig in new_level.get_signal_list():
+		match sig["name"]:
+			"lost":
+				new_level.lost.connect(_on_level_lost)
+			"won":
+				new_level.won.connect(_on_level_won)
 	
 	# Sample code in case there's a tutorial level in the game that would use it
 	#for sig in new_level.get_signal_list():
@@ -79,6 +83,6 @@ func _on_level_selected(new_level_scene: PackedScene):
 
 func _set_level(new_level_scene: PackedScene):
 	level_scene = new_level_scene
-	Globals.cur_level = level_scene
+	Globals.cur_level_scene = level_scene
 	_restart_level()
 	_resume_play()

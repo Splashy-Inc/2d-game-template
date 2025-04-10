@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func _gui_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if visible and event is InputEventKey:
 		exited.emit()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://k7ghjsy8g1k0"]
 
-[ext_resource type="Script" path="res://SCENES/GUI/main_menu.gd" id="1_vkagb"]
+[ext_resource type="Script" path="res://SCRIPTS/main_menu.gd" id="1_vkagb"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_y3ir5"]
 
 [node name="MainMenu" type="Control"]
