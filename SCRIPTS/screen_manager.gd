@@ -10,7 +10,6 @@ var paused = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_set_level(level_scene)
 	show_main_menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,7 +25,7 @@ func _resume_play(mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
 func _pause_play():
 	paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if level.has_method("pause_play"):
+	if level and level.has_method("pause_play"):
 		level.pause_play()
 
 func show_main_menu():
@@ -45,7 +44,7 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_play_pressed():
-	if game_ended:
+	if game_ended or not level:
 		_on_restart_pressed()
 	else:
 		_resume_play()

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://cavw65m6hlnw3"]
+
+[ext_resource type="Script" path="res://Dialogs/dialog_data.gd" id="1_ryqk6"]
+
+[resource]
+script = ExtResource("1_ryqk6")
+label = "Example"
+dialog_text = Array[String](["This is example dialog text. Click \"Continue\" to advance", "The dialog advanced! Click \"Continue\" again to end the dialog."])
