@@ -12,6 +12,19 @@ signal quit_pressed
 @onready var controls_screen: Control = $MenuScreens/ControlsScreen
 @onready var win_screen: Control = $MenuScreens/WinScreen
 @onready var loss_screen: Control = $MenuScreens/LossScreen
+@onready var pause_menu: Control = $MenuScreens/PauseMenu
+
+enum Menus {
+	NONE,
+	MAIN,
+	CONTROLS,
+	WIN,
+	LOSS,
+	PAUSE,
+}
+
+var cur_menu := Menus.NONE
+var prev_menu := Menus.NONE
 
 func _ready():
 	pass
@@ -31,28 +44,47 @@ func show_menu_screens():
 	menu_screens.show()
 
 func hide_menu_screens():
+	cur_menu = Menus.NONE
 	_clear_menu()
 	menu_screens.hide()
 
 func _on_controls_screen_exited():
-	show_main_menu()
+	_go_back_screen()
+
+func _go_back_screen():
+	match prev_menu:
+		Menus.PAUSE:
+			show_pause_menu()
+		_:
+			show_main_menu()
 
 func _show_controls():
+	prev_menu = cur_menu
+	cur_menu = Menus.CONTROLS
 	_clear_menu()
 	show_menu_screens()
 	controls_screen.show()
 
 func show_main_menu():
+	cur_menu = Menus.MAIN
 	_clear_menu()
 	show_menu_screens()
 	main_menu.show()
 
+func show_pause_menu():
+	cur_menu = Menus.PAUSE
+	_clear_menu()
+	show_menu_screens()
+	pause_menu.show()
+
 func show_win_screen():
+	cur_menu = Menus.WIN
 	_clear_menu()
 	show_menu_screens()
 	win_screen.show()
 
 func show_loss_screen():
+	cur_menu = Menus.LOSS
 	_clear_menu()
 	show_menu_screens()
 	loss_screen.show()

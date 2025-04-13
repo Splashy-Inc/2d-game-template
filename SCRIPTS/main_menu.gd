@@ -13,9 +13,6 @@ func _process(delta):
 func _on_play_button_pressed():
 	button_pressed.emit("Play")
 
-func _on_restart_button_pressed():
-	button_pressed.emit("Restart")
-
 func _on_controls_button_pressed():
 	button_pressed.emit("Controls")
 

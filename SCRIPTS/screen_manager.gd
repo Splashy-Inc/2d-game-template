@@ -6,6 +6,7 @@ extends Node
 
 var level
 var game_ended = false
+var paused = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,18 +18,28 @@ func _process(delta):
 	pass
 
 func _resume_play(mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
+	paused = false
 	hud.hide_menus()
 	if level.has_method("resume_play"):
 		level.resume_play(mouse_mode)
 
 func _pause_play():
+	paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if level.has_method("pause_play"):
 		level.pause_play()
 
 func show_main_menu():
 	_pause_play()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	hud.show_main_menu()
+
+func toggle_pause_menu():
+	if hud.cur_menu != HUD.Menus.MAIN:
+		if not paused:
+			_pause_play()
+			hud.show_pause_menu()
+		else:
+			_resume_play()
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -40,8 +51,8 @@ func _on_play_pressed():
 		_resume_play()
 
 func _input(event):
-	if event.is_action_pressed("menu"):
-		show_main_menu()
+	if event.is_action_pressed("pause"):
+		toggle_pause_menu()
 
 func _restart_level():
 	game_ended = false
