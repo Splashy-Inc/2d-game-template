@@ -5,6 +5,7 @@ class_name HUD
 signal play_pressed
 signal restart_pressed
 signal quit_pressed
+signal main_menu_pressed
 
 @onready var menu_screens: Control = $MenuScreens
 @onready var menu_back_ground: ColorRect = $MenuScreens/MenuBackGround
@@ -98,6 +99,6 @@ func _on_game_menu_button_pressed(type: String):
 		"Controls":
 			_show_controls()
 		"Main menu":
-			show_main_menu()
+			main_menu_pressed.emit()
 		"Quit":
 			quit_pressed.emit()

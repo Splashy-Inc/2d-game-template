@@ -4,7 +4,7 @@ extends Node
 
 @onready var hud: HUD = $HUD
 
-var level
+var level: Level
 var game_ended = false
 var paused = true
 
@@ -19,7 +19,7 @@ func _process(delta):
 func _resume_play(mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
 	paused = false
 	hud.hide_menus()
-	if level.has_method("resume_play"):
+	if level and level.has_method("resume_play"):
 		level.resume_play(mouse_mode)
 
 func _pause_play():
@@ -30,6 +30,9 @@ func _pause_play():
 
 func show_main_menu():
 	_pause_play()
+	if level:
+		level.queue_free()
+		level = null
 	hud.show_main_menu()
 
 func toggle_pause_menu():
@@ -96,3 +99,6 @@ func _set_level(new_level_scene: PackedScene):
 	Globals.cur_level_scene = level_scene
 	_restart_level()
 	_resume_play()
+
+func _on_main_menu_pressed() -> void:
+	show_main_menu()

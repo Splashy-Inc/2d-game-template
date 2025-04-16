@@ -43,7 +43,7 @@ func advance_dialog():
 
 func _get_next_line():
 	cur_dialog_position += 1
-	if cur_dialog_position < len(dialog_data.dialog_text):
+	if dialog_data and cur_dialog_position < len(dialog_data.dialog_text):
 		return dialog_data.dialog_text[cur_dialog_position]
 	return null
 
@@ -62,12 +62,13 @@ func _hide_end_buttons():
 func _show_end_buttons():
 	if end_buttons.is_empty():
 		dialog_ended.emit()
+		hide()
 	else:
 		dialog_button.hide()
 		for button in end_buttons:
 			button.show()
 		end_buttons.front().grab_focus()
-			
+
 func set_dialog_data(new_dialog_data: DialogData):
 	dialog_data = new_dialog_data
 	cur_dialog_position = -1
