@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=7 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
+[ext_resource type="PackedScene" uid="uid://dx3s73knm5n1u" path="res://SCENES/parallax_background.tscn" id="2_ffhdr"]
+[ext_resource type="PackedScene" uid="uid://d1fnfg5c0hmib" path="res://SCENES/tilemap_background.tscn" id="2_o64ee"]
 [ext_resource type="PackedScene" uid="uid://cwr6cg26cwtpw" path="res://SCENES/DialogSystem/dialog_box.tscn" id="2_xgpxw"]
 [ext_resource type="Resource" uid="uid://cavw65m6hlnw3" path="res://Dialogs/example_dialog_data.tres" id="3_5ii31"]
 [ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="3_vq471"]
 
 [node name="Playground" type="Node"]
 script = ExtResource("1_5e8d0")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_ffhdr")]
+
+[node name="TileMapBackground" parent="." instance=ExtResource("2_o64ee")]
 
 [node name="DialogBox" parent="." instance=ExtResource("2_xgpxw")]
 left_texture = ExtResource("3_vq471")
