@@ -13,6 +13,10 @@ func _ready() -> void:
 			mobile_controls.show()
 		else:
 			mobile_controls.hide()
+	_level_ready()
+
+func _level_ready():
+	pass
 
 func _process(delta: float) -> void:
 	# Ensure that the mobile controls are not visible if the dialog box is present

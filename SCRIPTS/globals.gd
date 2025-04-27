@@ -1,10 +1,14 @@
 extends Node
 
+signal info_updated
+
 var cur_level_scene: PackedScene
 
 var joypad_connected := false
 
 var joystick: JoyStick
+
+var info = 10 # Example info to track for level UI
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,3 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_joy_connection_changed(device, connected):
 	joypad_connected = Input.get_connected_joypads().size() > 0
+
+func update_info(new_info):
+	info = new_info
+	info_updated.emit(info)
