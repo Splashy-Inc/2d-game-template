@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://temjlvcxcb3r" path="res://SCENES/GUI/loss_screen.tscn" id="7_8h0it"]
 
 [node name="HUD" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_w38b1")
 
 [node name="MenuScreens" type="Control" parent="."]

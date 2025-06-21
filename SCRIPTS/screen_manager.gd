@@ -36,7 +36,7 @@ func show_main_menu():
 	hud.show_main_menu()
 
 func toggle_pause_menu():
-	if hud.cur_menu != HUD.Menus.MAIN:
+	if hud.cur_menu != HUD.Menus.MAIN and hud.cur_menu != HUD.Menus.CONTROLS:
 		if not paused:
 			_pause_play()
 			hud.show_pause_menu()

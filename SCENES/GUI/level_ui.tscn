@@ -29,12 +29,12 @@ offset_top = 18.0
 offset_right = 60.0
 offset_bottom = 39.0
 
-[node name="Anemone" type="Sprite2D" parent="."]
+[node name="InfoIcon" type="Sprite2D" parent="."]
 position = Vector2(600, 32)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_xharn")
 
-[node name="info_label" type="Label" parent="."]
+[node name="InfoLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 416.0
 offset_top = 19.0
