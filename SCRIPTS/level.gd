@@ -28,3 +28,13 @@ func _physics_process(delta: float) -> void:
 
 func _on_dialog_ended(dialog_box: DialogBox):
 	print_debug("Dialog ended: ", dialog_box)
+
+func pause_play():
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED
+	if dialog_box:
+		dialog_box.process_mode = ProcessMode.PROCESS_MODE_DISABLED
+
+func resume_play(new_mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
+	process_mode = ProcessMode.PROCESS_MODE_INHERIT
+	if dialog_box:
+		dialog_box.process_mode = ProcessMode.PROCESS_MODE_ALWAYS
