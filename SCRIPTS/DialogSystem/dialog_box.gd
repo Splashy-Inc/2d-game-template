@@ -82,6 +82,7 @@ func _get_next_line(increment: bool = true):
 			return dialog_data.dialog_text_json.data["dialog_lines"][cur_dialog_position]
 	return null
 
+#TODO: When setting dialog text, change the text section to align to the side associated with the respective speaker (left or right)
 func _set_dialog_text(new_text: String):
 	dialog_text_node.visible_characters = 0
 	dialog_text_node.text = Utils.replace_control_string_variables(new_text)

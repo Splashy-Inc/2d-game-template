@@ -1,7 +1,11 @@
 {
 	"dialog_lines": [
 		{
-			"line": "This is example dialog text. Click \"Continue\" to advance", 
+			"line": "This is example dialog text. Click \"Continue\" to advance.", 
+			"speaker": 1,
+		},
+		{
+			"line": "By default, dialog shows up on the right side of this box, so the default speaker sprite should be on the right.", 
 			"speaker": 1,
 		},
 		{

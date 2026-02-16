@@ -7,8 +7,6 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_263dt"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmsiy"]
-
 [node name="DialogBox" type="PanelContainer" unique_id=1988314642]
 process_mode = 3
 custom_minimum_size = Vector2(640, 90)
@@ -43,17 +41,19 @@ expand_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DialogTextSection" type="PanelContainer" parent="HBoxContainer/TextArea" unique_id=814341236]
+[node name="DialogTextSection" type="VBoxContainer" parent="HBoxContainer/TextArea" unique_id=2077302891]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qmsiy")
+
+[node name="Spacer" type="Control" parent="HBoxContainer/TextArea/DialogTextSection" unique_id=2020790049]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
 
 [node name="DialogText" type="Label" parent="HBoxContainer/TextArea/DialogTextSection" unique_id=619871009]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
-horizontal_alignment = 2
-vertical_alignment = 1
 autowrap_mode = 2
 visible_characters_behavior = 1
 
