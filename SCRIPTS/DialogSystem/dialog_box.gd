@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 	pass
 
 func initialize():
+	# TODO: Add sample textures and sounds
 	#left_texture_node.texture = left_texture
 	#left_sound_player.stream = left_sound
 	#right_texture_node.texture = right_texture
