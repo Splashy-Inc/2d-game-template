@@ -1,0 +1,24 @@
+{
+	"dialog_lines": [
+		{
+			"line": "This is example dialog text. Click \"Continue\" to advance.", 
+			"speaker": 1,
+		},
+		{
+			"line": "By default, dialog shows up on the right side of this box, so the default speaker sprite should be on the right.", 
+			"speaker": 1,
+		},
+		{
+			"line": "Take a look at the JSON/code to see how Utils can replace text, like controls based on platforms. Example: Move with <movement>",
+			"speaker": 1,
+		},
+		{
+			"line": "You can add custom buttons to the \"End Buttons\" array to allow for things like dialog decisions.", 
+			"speaker": 1,
+		},
+		{
+			"line": "If no end buttons are assigned, a default will be used. Click \"Continue\" again to end the dialog.",
+			"speaker": 1,
+		},
+	]
+}

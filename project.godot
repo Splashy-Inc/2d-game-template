@@ -24,6 +24,7 @@ boot_splash/image="res://SplashySplashScreen.png"
 [autoload]
 
 Globals="*res://SCRIPTS/globals.gd"
+Utils="*uid://6kny11b0ik6g"
 
 [display]
 

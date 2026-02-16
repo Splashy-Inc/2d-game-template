@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqw3k8ogffvua"]
+[gd_scene format=3 uid="uid://cqw3k8ogffvua"]
 
-[ext_resource type="Script" path="res://SCRIPTS/DialogSystem/dialog_button.gd" id="1_o4yle"]
+[ext_resource type="Script" uid="uid://c6wlkv2d5hjxp" path="res://SCRIPTS/DialogSystem/dialog_button.gd" id="1_o4yle"]
 
-[node name="DialogButton" type="Button"]
+[node name="DialogButton" type="Button" unique_id=1426861411]
 offset_right = 8.0
 offset_bottom = 8.0
 size_flags_horizontal = 4

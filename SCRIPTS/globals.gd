@@ -10,6 +10,9 @@ var joystick: JoyStick
 
 var info = 10 # Example info to track for level UI
 
+var controls_data := load("res://controls_data.tres") as ControlsData
+var cur_controls := ControlsData.AVAILABLE_CONTROLS
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)

@@ -6,7 +6,8 @@ class_name DialogButton
 
 enum Dialog_button_action_type {
 	ADVANCE,
-	CUSTOM
+	SKIP,
+	CUSTOM,
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -15,5 +16,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass

@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwr6cg26cwtpw"]
+[gd_scene format=3 uid="uid://cwr6cg26cwtpw"]
 
-[ext_resource type="Script" path="res://SCRIPTS/DialogSystem/dialog_box.gd" id="1_ik285"]
+[ext_resource type="Script" uid="uid://doq6uyl5pfwmv" path="res://SCRIPTS/DialogSystem/dialog_box.gd" id="1_ik285"]
 [ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="2_nkkfn"]
 [ext_resource type="PackedScene" uid="uid://cqw3k8ogffvua" path="res://SCENES/DialogSystem/dialog_button.tscn" id="5_gvo3j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_263dt"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmsiy"]
-
-[node name="DialogBox" type="PanelContainer"]
+[node name="DialogBox" type="PanelContainer" unique_id=1988314642]
 process_mode = 3
 custom_minimum_size = Vector2(640, 90)
 anchors_preset = 7
@@ -26,50 +24,53 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_263dt")
 script = ExtResource("1_ik285")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1685514518]
 layout_mode = 2
 alignment = 1
 
-[node name="LeftPanel" type="PanelContainer" parent="HBoxContainer"]
+[node name="LeftPanel" type="PanelContainer" parent="HBoxContainer" unique_id=1349999132]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="LeftTexture" type="TextureRect" parent="HBoxContainer/LeftPanel"]
+[node name="LeftTexture" type="TextureRect" parent="HBoxContainer/LeftPanel" unique_id=1877293344]
 layout_mode = 2
 texture = ExtResource("2_nkkfn")
 expand_mode = 3
 
-[node name="TextArea" type="VBoxContainer" parent="HBoxContainer"]
+[node name="TextArea" type="VBoxContainer" parent="HBoxContainer" unique_id=1664271973]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DialogTextSection" type="PanelContainer" parent="HBoxContainer/TextArea"]
+[node name="DialogTextSection" type="VBoxContainer" parent="HBoxContainer/TextArea" unique_id=2077302891]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qmsiy")
 
-[node name="DialogText" type="Label" parent="HBoxContainer/TextArea/DialogTextSection"]
-custom_minimum_size = Vector2(300, 0)
+[node name="Spacer" type="Control" parent="HBoxContainer/TextArea/DialogTextSection" unique_id=2020790049]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+
+[node name="DialogText" type="Label" parent="HBoxContainer/TextArea/DialogTextSection" unique_id=619871009]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
-horizontal_alignment = 2
-vertical_alignment = 1
 autowrap_mode = 2
+visible_characters_behavior = 1
 
-[node name="DialogButtonSection" type="HBoxContainer" parent="HBoxContainer/TextArea"]
+[node name="DialogButtonSection" type="HBoxContainer" parent="HBoxContainer/TextArea" unique_id=607282120]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="DialogButton" parent="HBoxContainer/TextArea/DialogButtonSection" instance=ExtResource("5_gvo3j")]
+[node name="DialogButton" parent="HBoxContainer/TextArea/DialogButtonSection" unique_id=2126789626 instance=ExtResource("5_gvo3j")]
 layout_mode = 2
 
-[node name="RightPanel" type="PanelContainer" parent="HBoxContainer"]
+[node name="RightPanel" type="PanelContainer" parent="HBoxContainer" unique_id=1059454794]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 
-[node name="RightTexture" type="TextureRect" parent="HBoxContainer/RightPanel"]
+[node name="RightTexture" type="TextureRect" parent="HBoxContainer/RightPanel" unique_id=1370429463]
 layout_mode = 2
 texture = ExtResource("2_nkkfn")
 expand_mode = 3

@@ -28,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_dialog_ended(cur_dialog_box: DialogBox):
 	print_debug("Dialog ended: ", cur_dialog_box)
+	cur_dialog_box.hide()
 
 func pause_play():
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED
