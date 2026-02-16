@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvp1lppkqj5qi"]
+[gd_scene format=3 uid="uid://bvp1lppkqj5qi"]
 
 [ext_resource type="PackedScene" uid="uid://l63bub3q0j7s" path="res://SCENES/GUI/pause_button.tscn" id="1_l6r4l"]
 [ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="1_xharn"]
@@ -11,30 +11,30 @@ func _ready() -> void:
 	Globals.info_updated.connect(_on_info_updated)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_info_updated(new_info):
 	text = str(new_info)
 "
 
-[node name="LevelUI" type="Control"]
+[node name="LevelUI" type="Control" unique_id=580807360]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="PauseButton" parent="." instance=ExtResource("1_l6r4l")]
+[node name="PauseButton" parent="." unique_id=1347886322 instance=ExtResource("1_l6r4l")]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 18.0
 offset_right = 60.0
 offset_bottom = 39.0
 
-[node name="InfoIcon" type="Sprite2D" parent="."]
+[node name="InfoIcon" type="Sprite2D" parent="." unique_id=1209311272]
 position = Vector2(600, 32)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_xharn")
 
-[node name="InfoLabel" type="Label" parent="."]
+[node name="InfoLabel" type="Label" parent="." unique_id=790652174]
 layout_mode = 0
 offset_left = 416.0
 offset_top = 19.0

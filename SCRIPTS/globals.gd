@@ -16,10 +16,10 @@ func _ready() -> void:
 	joypad_connected = Input.get_connected_joypads().size() > 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-func _on_joy_connection_changed(device, connected):
+func _on_joy_connection_changed(_device, _connected):
 	joypad_connected = Input.get_connected_joypads().size() > 0
 
 func update_info(new_info):

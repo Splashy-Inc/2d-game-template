@@ -13,7 +13,7 @@ func _ready():
 	show_main_menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _resume_play(mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
