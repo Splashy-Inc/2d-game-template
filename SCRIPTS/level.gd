@@ -18,23 +18,23 @@ func _ready() -> void:
 func _level_ready():
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Ensure that the mobile controls are not visible if the dialog box is present
 	if mobile_controls.visible and dialog_box.visible:
 		mobile_controls.hide()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 
-func _on_dialog_ended(dialog_box: DialogBox):
-	print_debug("Dialog ended: ", dialog_box)
+func _on_dialog_ended(cur_dialog_box: DialogBox):
+	print_debug("Dialog ended: ", cur_dialog_box)
 
 func pause_play():
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED
 	if dialog_box:
 		dialog_box.process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
-func resume_play(new_mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
+func resume_play(_new_mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
 	process_mode = ProcessMode.PROCESS_MODE_INHERIT
 	if dialog_box:
 		dialog_box.process_mode = ProcessMode.PROCESS_MODE_ALWAYS

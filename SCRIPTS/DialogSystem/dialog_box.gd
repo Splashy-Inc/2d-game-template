@@ -29,7 +29,7 @@ func _ready() -> void:
 		button.reparent(dialog_button_section)
 	_hide_end_buttons()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Globals.joypad_connected and dialog_button.visible and not dialog_button.has_focus():
 		pass
 		#dialog_button.grab_focus()

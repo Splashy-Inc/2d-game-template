@@ -30,7 +30,7 @@ var prev_menu := Menus.NONE
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func hide_menus():
